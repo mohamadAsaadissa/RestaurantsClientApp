@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Model="clr-namespace:RestaurantsClientApp.Models" xmlns:vm="clr-namespace:RestaurantsClientApp.ViewModels"
+             x:Class="RestaurantsClientApp.Views.DetailMealPage">
+
+
+    <!--<ContentPage.BindingContext>
+        <vm:BaseViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#faf3ed</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+
+    <ContentPage.Content>
+       
+
+        <!--<RefreshView  Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}" >-->
+        <!--<Grid    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:DataType="Model:Meal">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+               
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+              
+            </Grid.RowDefinitions>-->
+        <StackLayout  Padding="5">
+
+            <FlexLayout  Direction="Row" Wrap="NoWrap" JustifyContent="SpaceAround" BackgroundColor="#F5F5F5" x:DataType="Model:Meal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+           
+               
+            <Image x:Name="ImageData"  Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FlexLayout.Grow="0.8" />
+
+
+
+                <FlexLayout  Direction="Column" Wrap="NoWrap" JustifyContent="SpaceAround" BackgroundColor="#F5F5F5"  VerticalOptions="FillAndExpand" FlexLayout.Grow="1">
+
+                    <StackLayout  HorizontalOptions="Center" FlexLayout.Grow="0.6" VerticalOptions="FillAndExpand">
+                    <Label   x:Name="NameData"  FontSize="Title"  FontAttributes="Bold"/>
+                </StackLayout>
+
+                    <Label  x:Name="DescriptionData"  FontSize="Small"  FontAttributes="Bold" FlexLayout.Grow="1" VerticalOptions="FillAndExpand"/>
+
+                    <StackLayout Orientation="Horizontal" FlexLayout.Grow="0.5" Padding="5" VerticalOptions="FillAndExpand">
+                    <Label  Text="Priset:"  FontSize="Small" HorizontalTextAlignment="Start" FontAttributes="Bold"/>
+                    <Label  x:Name="PriceData"  FontSize="Small" FontAttributes="Bold" />
+                </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="0,0,0,10" FlexLayout.Grow="0.9" VerticalOptions="FillAndExpand">
+                    <Button Clicked="btnPlusClicked" Text="+" BackgroundColor="#F5F5F5" WidthRequest="30" FontAttributes="Bold" TextColor="Black"  Margin="10"/>
+                    <Label x:Name="lblNumOfOrder" WidthRequest="35" FontAttributes="Bold" FontSize="Large" Padding="10"/>
+                    <Button Clicked="btnMinusClicked" Text="-" BackgroundColor="#F5F5F5" WidthRequest="30" FontAttributes="Bold" TextColor="Black"  Margin="10"/>
+
+                    <Button Clicked="btnAddOrderClicked" Text="Lägg till" BackgroundColor="Red" Margin="10" CornerRadius="20" TextColor="White" WidthRequest="130" />
+                    
+                </StackLayout>
+            
+            </FlexLayout>
+            
+        </FlexLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

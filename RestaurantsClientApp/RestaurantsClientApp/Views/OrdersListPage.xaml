@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:model="clr-namespace:RestaurantsClientApp.Models"
+             x:Class="RestaurantsClientApp.Views.OrdersListPage" xmlns:local="clr-namespace:RestaurantsClientApp.ViewModels"
+             Title="Din beställning">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Skicka beställning"  Clicked="ToolbarItemSaveTempDetailOrder_Clicked"> </ToolbarItem>
+        
+        <ToolbarItem Text="{Binding SumMenuItem}"  />
+        <ToolbarItem   Text="{Binding MomsMenuItem}" />
+        <ToolbarItem   Text="{Binding TotalMenuItem}" />
+       
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+       
+            <RefreshView   Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+           
+                <ScrollView Padding="10">
+            <StackLayout>
+                    <FlexLayout Direction="Row" Wrap="NoWrap" JustifyContent="SpaceAround" BackgroundColor="#F5F5F5" Padding="5,5">
+                        <Label Text="ID" FontSize="Small" TextColor="Black" FontAttributes="Italic" FlexLayout.Grow="0.3"/>
+                        <Label Text="Meal" FontSize="Small" TextColor="Black" FontAttributes="Italic" FlexLayout.Grow="1"/>
+                        <Label Text="Name" FontSize="Small" TextColor="Black" FontAttributes="Italic" FlexLayout.Grow="1"/>
+                        <Label Text="Quantity" FontSize="Small" TextColor="Black" FontAttributes="Italic" FlexLayout.Grow="1.2"/>
+                        <Label Text="Price" FontSize="Small" TextColor="Black" FontAttributes="Italic" FlexLayout.Grow="1.2"/>
+                        <Label Text="Summa" FontSize="Small" TextColor="Black" FontAttributes="Italic" FlexLayout.Grow="1.2"/>
+                        <Label Text="Delete" FontSize="Small" TextColor="Black" FontAttributes="Italic" FlexLayout.Grow="0.5"/>
+                      
+                    </FlexLayout>
+  <!--SelectedItem = "{Binding SelectedOrder, Mode=TwoWay}"-->
+                    <StackLayout>
+                        <ListView x:Name="TempDetailOrdersList" ItemsSource="{Binding TempOrderItems}"  
+                                                        HasUnevenRows="True"  ItemSelected="TempDetailOrdersList_ItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <!--<ViewCell.ContextActions>
+
+                                        -->
+                                    <!--<MenuItem Text="Вверх"
+                                                      Command="{Binding Path=ListViewModel.DeleteDetailOrderCommand}" CommandParameter="{Binding}" />
+                                            <MenuItem   Text="SECAND"   />
+                                             <MenuItem  Text="TREEDE"  />-->
+                                    <!--
+
+                                        </ViewCell.ContextActions>-->
+
+                                    <ViewCell.View>
+                                            <FlexLayout Direction="Row" Wrap="NoWrap" JustifyContent="SpaceAround" BackgroundColor="#F5F5F5" Padding="5,5" >
+
+
+                                            <Label Text="{Binding TempDetailOrderId}" FontSize="Small" TextColor="Black" FlexLayout.Grow="0.3" />
+                                            <Image Source="{Binding TempPath}"  FlexLayout.Grow="1"  HorizontalOptions="Center"/>
+                                            <Label Text="{Binding TempMealName}" FontSize="Small" TextColor="Black" FlexLayout.Grow="2"/>
+
+                                            <Label  Text="{Binding TempQuantity}" FontSize="Small" TextColor="Black" FlexLayout.Grow="1.4"/>
+                                            <Label  Text="{Binding TempPrice}" FontSize="Small" TextColor="Black" FlexLayout.Grow="1.4"/>
+                                            <Label   Text="{Binding TempSumma}" FontSize="Small" TextColor="Black" FlexLayout.Grow="1.4"/>
+
+                                            <!--<Button  Text="" FontSize="Small"  HeightRequest="30" x:DataType="local:DetailOrderViewModel"
+                                                     Command="{Binding Path=ListViewModel.SelectedOrder}" CommandParameter="{Binding}" FlexLayout.Grow="0.3"/>-->
+
+                                                <Button  Text="X" FontSize="Small" TextColor="Red" Clicked="BtnDeleteTempOrder_Clicked"  HeightRequest="40" ClassId="{Binding TempDetailOrderId}"
+                                                      FlexLayout.Grow="0.5"/>
+
+                                        </FlexLayout>
+                                           
+<!--Command="{Binding  ListViewModel.SelectedOrder}" CommandParameter="{Binding}"-->
+                                    </ViewCell.View>
+                                        
+                                    </ViewCell>
+                            </DataTemplate>
+                             
+                            </ListView.ItemTemplate>   
+                           </ListView>
+                        <Button  Text="Spara och skicka din beställning" FontSize="Small" HorizontalOptions="Center"></Button>
+                   </StackLayout>
+                    
+                    <!--<FlexLayout Direction="Row" Wrap="NoWrap" JustifyContent="SpaceAround" BackgroundColor="#F5F5F5" Padding="5,5">
+                        <Label Text="ID" FontSize="Small" TextColor="Black" FontAttributes="Italic" FlexLayout.Grow="0.3"/>
+                        <Label Text="Meal" FontSize="Small" TextColor="Black" FontAttributes="Italic" FlexLayout.Grow="1"/>
+                        <Label Text="Name" FontSize="Small" TextColor="Black" FontAttributes="Italic" FlexLayout.Grow="1"/>
+                        <Label Text="Quantity" FontSize="Small" TextColor="Black" FontAttributes="Italic" FlexLayout.Grow="1.2"/>
+                        <Label Text="Price" FontSize="Small" TextColor="Black" FontAttributes="Italic" FlexLayout.Grow="1.2"/>
+                        <Label Text="Summa" FontSize="Small" TextColor="Black" FontAttributes="Italic" FlexLayout.Grow="1.2"/>
+                        <Label Text="Delete" FontSize="Small" TextColor="Black" FontAttributes="Italic" FlexLayout.Grow="0.5"/>-->
+                       
+                    <!--</FlexLayout>-->
+
+               </StackLayout>
+                </ScrollView>
+           
+        </RefreshView>
+        </ContentPage.Content>
+</ContentPage>
