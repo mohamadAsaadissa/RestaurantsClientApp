@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RestaurantsClientApp.Views"
+             x:Class="RestaurantsClientApp.AppShell"
+             Title="CalendarServiceDemo" >
+    
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#ed8734</Color>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            </Style>
+           
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+        
+        <Style x:Key="buttonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            <Setter Property="TextColor" Value="White" />
+        </Style>
+    </Shell.Resources>
+
+    <TabBar>
+        <ShellContent Title="Hem" Icon="icon_Home.png" Route="MenuPage" ContentTemplate="{DataTemplate local:MenuPage}" />
+        <ShellContent Title="Inköpslistor" Icon="icon_List.png" ContentTemplate="{DataTemplate local:OrdersListPage}"/>
+        <ShellContent Title="Erbjudande" Icon="icon_Krona.png" ContentTemplate="{DataTemplate local:OfferPage}" />
+        <ShellContent Title="About" Icon="icon_About.png"  ContentTemplate="{DataTemplate local:AboutPage}" />
+
+    </TabBar>
+
+    
+</Shell>
