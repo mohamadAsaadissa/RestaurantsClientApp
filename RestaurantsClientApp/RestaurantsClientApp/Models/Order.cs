@@ -18,9 +18,9 @@ namespace RestaurantsClientApp.Models
 
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public virtual List<DetailOrder> DetailOrders { get; set; } // detail about order
-
-        [ForeignKey(typeof(Client))]
-        public string ClientId { get; set; } = ""; // client-orders
+        public virtual IEnumerable<Client>  Clients { get; set; }  // client-orders
+        //[ForeignKey(typeof(Client))]
+        //public string ClientId { get; set; } = ""; // client-orders
 
         [ForeignKey(typeof(Worker))]
         public string WorkerId { get; set; } = "";      // worker-orders

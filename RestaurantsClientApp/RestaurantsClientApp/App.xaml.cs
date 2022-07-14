@@ -15,24 +15,12 @@ namespace RestaurantsClientApp
                              DATABASE_NAME);
 
 
-        //public static UnivDataStoreAsyncRepository univdatabase;
-        //public static UnivDataStoreAsyncRepository Univdatabase
-        //{
-        //    get
-        //    {
-        //        if (univdatabase == null)
-        //        {
-
-        //            univdatabase = new UnivDataStoreAsyncRepository(DBPATH,);
-
-        //        }
-        //        return univdatabase;
-        //    }
-        //}
+       
 
         public static DetailOrderDataStoreAsyncRepository detailOrderdatabase;
         public static DetailOrderDataStoreAsyncRepository DetailOrderdatabase
         {
+            
             get
             {
                 if (detailOrderdatabase == null)
@@ -117,8 +105,7 @@ namespace RestaurantsClientApp
             }
         }
         public static MenuAsyncRepository menudatabase;
-        //Path.Combine(
-       // Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), DATABASE_NAME)
+     
         public static MenuAsyncRepository MenuDatabase
         {
             get
@@ -135,7 +122,7 @@ namespace RestaurantsClientApp
         public App()
         {
             InitializeComponent();
-            //Routing.RegisterRoute(nameof(MealPage), typeof(MealPage));
+           
           
             MainPage = new  AppShell();
         }

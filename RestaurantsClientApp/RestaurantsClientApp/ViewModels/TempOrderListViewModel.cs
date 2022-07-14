@@ -30,7 +30,7 @@ namespace RestaurantsClientApp.ViewModels
             //DeleteTempOrderCommand = new Command(async () => await DeleteTempDetailOrder());
             UpdateDetailOrderCommand= new Command(UpdateTempDetailOrder);
 
-            SaveTempDetailOrderCommand = new Command(SaveTempDetailOrder);
+            //SaveTempDetailOrderCommand = new Command(SaveTempDetailOrder);
             BackCommand = new Command(Back);
         }
 
@@ -50,8 +50,8 @@ namespace RestaurantsClientApp.ViewModels
             await Navigation.PopAsync();
         }
         // save temp to detailorder and then remove all items 
-        private async void SaveTempDetailOrder(object obj)
-        {
+        //private async void SaveTempDetailOrder(object obj)
+        //{
           
             //try
             //{
@@ -89,7 +89,7 @@ namespace RestaurantsClientApp.ViewModels
             //{
             //    Debug.WriteLine(ex);
             //} 
-}
+//}
 
         #region faktura räkningar avaibles
 
