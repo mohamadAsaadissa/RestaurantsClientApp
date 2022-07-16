@@ -13,6 +13,23 @@ namespace RestaurantsClientApp
         public const string DATABASE_NAME = "RestaurantDB.db";
         public static string DBPATH = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), 
                              DATABASE_NAME);
+
+
+        //public static UnivDataStoreAsyncRepository univdatabase;
+        //public static UnivDataStoreAsyncRepository Univdatabase
+        //{
+        //    get
+        //    {
+        //        if (univdatabase == null)
+        //        {
+
+        //            univdatabase = new UnivDataStoreAsyncRepository(DBPATH,);
+
+        //        }
+        //        return univdatabase;
+        //    }
+        //}
+
         public static DetailOrderDataStoreAsyncRepository detailOrderdatabase;
         public static DetailOrderDataStoreAsyncRepository DetailOrderdatabase
         {

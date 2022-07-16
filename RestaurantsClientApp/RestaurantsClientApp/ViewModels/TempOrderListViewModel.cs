@@ -39,11 +39,57 @@ namespace RestaurantsClientApp.ViewModels
             Back();
         }
 
+        //private async Task DeleteTempDetailOrder()
+        //{
+        //    var tempOrderItems = await App.TempDetailOrderDatabase.GetItemsAsync();
+        //}
+
         private  async void Back()
         {
             await Navigation.PopAsync();
         }
-        
+        // save temp to detailorder and then remove all items 
+        //private async void SaveTempDetailOrder(object obj)
+        //{
+          
+            //try
+            //{
+            //    bool isOk = await new Page().DisplayAlert("Attention", "Vill DU SKICKA DIN BESTÄLLNIG?", "OK", "Cancel");
+
+
+            //    if (isOk)
+            //    {
+            //        var Order = new Order();
+            //        await App.OrderDatabase.SaveItemAsync(Order);
+
+                   
+            //        foreach (var tempDetail in TempOrderItems)
+            //        {
+            //            var detailOrder = new DetailOrder();
+
+            //            detailOrder.OrderId = Order.OrderId;
+            //            detailOrder.Quantity = tempDetail.TempQuantity;
+            //            detailOrder.MealId = tempDetail.TempMealId;
+
+            //            await App.DetailOrderdatabase.SaveItemAsync(detailOrder);
+
+            //        }
+
+            //        // REMOVE iTEMS FRÅN TABLE
+            //        foreach (var tempDetail in TempOrderItems)
+            //        {
+            //            await App.TempDetailOrderDatabase.DeleteItemAsync(tempDetail);
+            //        }
+
+            //    }
+            //    await Navigation.PushAsync(new MenuPage());
+            //}
+            //catch (Exception ex)
+            //{
+            //    Debug.WriteLine(ex);
+            //} 
+//}
+
         #region faktura räkningar avaibles
 
         string sumMenuItem = "0";
