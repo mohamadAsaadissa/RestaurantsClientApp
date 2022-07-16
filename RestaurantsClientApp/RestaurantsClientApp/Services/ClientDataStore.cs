@@ -16,7 +16,7 @@ namespace RestaurantsClientApp.Services
         public ClientAsyncRepository(string databasePath)
         {         
             database = new SQLiteAsyncConnection(databasePath);
-            //create the table// no exist in DB
+            //create the table
            
             database.CreateTableAsync<Client>();
         }

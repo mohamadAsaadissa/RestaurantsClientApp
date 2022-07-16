@@ -119,33 +119,34 @@ namespace RestaurantsClientApp
         public App()
         {
             InitializeComponent();
-          
+           var  dbPath= GetDatabasePath();
             MainPage = new  AppShell();
         }
 
         // path where the database will be located
-        //private static string GetDatabasePath()
-        //{
-        //    string dbPath = "/data/user/0/com.companyname.createrestaurantdbapp/files/.local/share/RestaurantDB.db";
-        //   // string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), DATABASE_NAME);
-        //    // if the database does not exist (not copied yet)
-        //    if (!File.Exists(dbPath))
-        //    {
-        //        // get the current build
-        //        var assembly = IntrospectionExtensions.GetTypeInfo(typeof(App)).Assembly;
-        //        // take a database resource from it and create a stream from it
-        //        using (Stream stream = assembly.GetManifestResourceStream($"CreateRestaurantDBApp.{DATABASE_NAME}"))
-        //        {
-        //            using (FileStream fs = new FileStream(dbPath, FileMode.OpenOrCreate))
-        //            {
-        //                stream.CopyTo(fs); // copy the database file to the desired location
-        //                fs.Flush();
-        //            }
-        //        }
+        private static string GetDatabasePath()
+        {
+            string dbPath = "";
+                //"/data/user/0/com.companyname.createrestaurantdbapp/files/.local/share/RestaurantDB.db";
+            // string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), DATABASE_NAME);
+            // if the database does not exist (not copied yet)
+            if (!File.Exists(dbPath))
+            {
+                // get the current build
+                var assembly = IntrospectionExtensions.GetTypeInfo(typeof(App)).Assembly;
+                // take a database resource from it and create a stream from it
+                using (Stream stream = assembly.GetManifestResourceStream($"CreateRestaurantDBApp.{DATABASE_NAME}"))
+                {
+                    using (FileStream fs = new FileStream(dbPath, FileMode.OpenOrCreate))
+                    {
+                        stream.CopyTo(fs); // copy the database file to the desired location
+                        fs.Flush();
+                    }
+                }
 
-        //    }
-        //    return dbPath;
-        //}
+            }
+            return dbPath;
+        }
 
         protected override void OnStart()
         {
