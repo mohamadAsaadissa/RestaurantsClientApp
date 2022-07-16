@@ -51,10 +51,6 @@ namespace RestaurantsClientApp.ViewModels
     }
 }
 
-       
-
-
-
 
 
 

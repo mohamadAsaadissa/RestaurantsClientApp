@@ -14,22 +14,6 @@ namespace RestaurantsClientApp
         public static string DBPATH = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), 
                              DATABASE_NAME);
 
-
-        //public static UnivDataStoreAsyncRepository univdatabase;
-        //public static UnivDataStoreAsyncRepository Univdatabase
-        //{
-        //    get
-        //    {
-        //        if (univdatabase == null)
-        //        {
-
-        //            univdatabase = new UnivDataStoreAsyncRepository(DBPATH,);
-
-        //        }
-        //        return univdatabase;
-        //    }
-        //}
-
         public static DetailOrderDataStoreAsyncRepository detailOrderdatabase;
         public static DetailOrderDataStoreAsyncRepository DetailOrderdatabase
         {
@@ -135,7 +119,6 @@ namespace RestaurantsClientApp
         public App()
         {
             InitializeComponent();
-
           
             MainPage = new  AppShell();
         }
